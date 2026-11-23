@@ -1,0 +1,15 @@
+C:\Users\inc\source\repos\NanoCadPluginTemplate\NanoCadPlugin\bin\Debug\NanoCadPlugin.deps.json
+C:\Users\inc\source\repos\NanoCadPluginTemplate\NanoCadPlugin\bin\Debug\NanoCadPlugin.dll
+C:\Users\inc\source\repos\NanoCadPluginTemplate\NanoCadPlugin\bin\Debug\NanoCadPlugin.pdb
+C:\Users\inc\source\repos\NanoCadPluginTemplate\NanoCadPlugin\obj\Debug\NanoCadPlugin.csproj.AssemblyReference.cache
+C:\Users\inc\source\repos\NanoCadPluginTemplate\NanoCadPlugin\obj\Debug\NanoCadPlugin.PluginForm.resources
+C:\Users\inc\source\repos\NanoCadPluginTemplate\NanoCadPlugin\obj\Debug\NanoCadPlugin.csproj.GenerateResource.cache
+C:\Users\inc\source\repos\NanoCadPluginTemplate\NanoCadPlugin\obj\Debug\NanoCadPlugin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\inc\source\repos\NanoCadPluginTemplate\NanoCadPlugin\obj\Debug\NanoCadPlugin.AssemblyInfoInputs.cache
+C:\Users\inc\source\repos\NanoCadPluginTemplate\NanoCadPlugin\obj\Debug\NanoCadPlugin.AssemblyInfo.cs
+C:\Users\inc\source\repos\NanoCadPluginTemplate\NanoCadPlugin\obj\Debug\NanoCadPlugin.csproj.CoreCompileInputs.cache
+C:\Users\inc\source\repos\NanoCadPluginTemplate\NanoCadPlugin\obj\Debug\NanoCadPlugin.dll
+C:\Users\inc\source\repos\NanoCadPluginTemplate\NanoCadPlugin\obj\Debug\refint\NanoCadPlugin.dll
+C:\Users\inc\source\repos\NanoCadPluginTemplate\NanoCadPlugin\obj\Debug\NanoCadPlugin.pdb
+C:\Users\inc\source\repos\NanoCadPluginTemplate\NanoCadPlugin\obj\Debug\ref\NanoCadPlugin.dll
+C:\Users\inc\source\repos\NanoCadPluginTemplate\NanoCadPlugin\obj\Debug\NanoCadP.20DE9C74.Up2Date

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<title>Иконки mcsmenu.dll</title>
+<style>
+body { background:#2b2b2b; color:#e6e6e6; font-family:Segoe UI, sans-serif; margin:20px; }
+h1 { font-size:18px; font-weight:600; }
+.hint { color:#bbb; font-size:13px; margin-bottom:14px; line-height:1.5; }
+input { width:420px; padding:8px 10px; font-size:14px; border-radius:6px; border:1px solid #555; background:#1f1f1f; color:#eee; }
+#picked { margin:12px 0; color:#8fd18f; font-size:14px; }
+#grid { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+.card { width:112px; min-height:118px; background:#383838; border:1px solid #4a4a4a; border-radius:8px;
+        padding:8px; text-align:center; cursor:pointer; }
+.card:hover { background:#454545; border-color:#7aa7d8; }
+.card img { width:32px; height:32px; image-rendering:pixelated; }
+.card .n { font-size:12px; color:#ffd479; margin-top:4px; }
+.card .t { font-size:10px; color:#c9c9c9; margin-top:3px; line-height:1.2; max-height:44px; overflow:hidden; }
+</style></head><body>
+<h1>Иконки из mcsmenu.dll (nanoCAD Механика)</h1>
+<div class="hint">
+  Клик по иконке покажет её имя для <code>user_ribbon.cfg</code>.<br>
+  Выбранную иконку можно поставить так: <code>BitmapDll=smcsmenu.dll |Icon=s&lt;имя&gt;</code>, затем перезапустить nanoCAD.
+</div>
+<input id="q" placeholder="Поиск: имя, команда или подпись (например, насос, расчёт, труба)" oninput="filter()">
+<div id="picked"></div>
+<div id="grid">
+<div class="card" data-name="I22 Фаска для вала mcachamfer" onclick="pick('I22')"><img src="mcsmenu/I22.png" alt="I22"><div class="n">I22</div><div class="t">Фаска для вала</div></div>
+<div class="card" data-name="I26  " onclick="pick('I26')"><img src="mcsmenu/I26.png" alt="I26"><div class="n">I26</div><div class="t"></div></div>
+<div class="card" data-name="I27 Произвольная обрезка контура mctrim" onclick="pick('I27')"><img src="mcsmenu/I27.png" alt="I27"><div class="n">I27</div><div class="t">Произвольная обрезка контура</div></div>
+<div class="card" data-name="I28 Добавить вид mcaddview" onclick="pick('I28')"><img src="mcsmenu/I28.png" alt="I28"><div class="n">I28</div><div class="t">Добавить вид</div></div>
+<div class="card" data-name="I29 Сопряжение для вала mcafilet" onclick="pick('I29')"><img src="mcsmenu/I29.png" alt="I29"><div class="n">I29</div><div class="t">Сопряжение для вала</div></div>
+<div class="card" data-name="I30 Вдоль mcalong_kwd" onclick="pick('I30')"><img src="mcsmenu/I30.png" alt="I30"><div class="n">I30</div><div class="t">Вдоль</div></div>
+<div class="card" data-name="I32 Массив по области (без диалога) mcararray" onclick="pick('I32')"><img src="mcsmenu/I32.png" alt="I32"><div class="n">I32</div><div class="t">Массив по области (без диалога)</div></div>
+<div class="card" data-name="I33 Валы mcarbor" onclick="pick('I33')"><img src="mcsmenu/I33.png" alt="I33"><div class="n">I33</div><div class="t">Валы</div></div>
+<div class="card" data-name="I34 Внутренние участки вала mcarborin" onclick="pick('I34')"><img src="mcsmenu/I34.png" alt="I34"><div class="n">I34</div><div class="t">Внутренние участки вала</div></div>
+<div class="card" data-name="I35 Массив по области mcardarray" onclick="pick('I35')"><img src="mcsmenu/I35.png" alt="I35"><div class="n">I35</div><div class="t">Массив по области</div></div>
+<div class="card" data-name="I45 Создание массива mcarray" onclick="pick('I45')"><img src="mcsmenu/I45.png" alt="I45"><div class="n">I45</div><div class="t">Создание массива</div></div>
+<div class="card" data-name="I47 Отрисовка осей mcaxis" onclick="pick('I47')"><img src="mcsmenu/I47.png" alt="I47"><div class="n">I47</div><div class="t">Отрисовка осей</div></div>
+<div class="card" data-name="I48 Обозначение базы mcbase" onclick="pick('I48')"><img src="mcsmenu/I48.png" alt="I48"><div class="n">I48</div><div class="t">Обозначение базы</div></div>
+<div class="card" data-name="I50 Расчет балки mcbeam" onclick="pick('I50')"><img src="mcsmenu/I50.png" alt="I50"><div class="n">I50</div><div class="t">Расчет балки</div></div>
+<div class="card" data-name="I53 Проверочный расчет болтов mcboltdesign" onclick="pick('I53')"><img src="mcsmenu/I53.png" alt="I53"><div class="n">I53</div><div class="t">Проверочный расчет болтов</div></div>
+<div class="card" data-name="I58 Разрывы, обрывы mcbreak" onclick="pick('I58')"><img src="mcsmenu/I58.png" alt="I58"><div class="n">I58</div><div class="t">Разрывы, обрывы</div></div>
+<div class="card" data-name="I59 Криволинейный обрыв mcbreak_curved" onclick="pick('I59')"><img src="mcsmenu/I59.png" alt="I59"><div class="n">I59</div><div class="t">Криволинейный обрыв</div></div>
+<div class="card" data-name="I60 Линейный обрыв mcbreak_linear" onclick="pick('I60')"><img src="mcsmenu/I60.png" alt="I60"><div class="n">I60</div><div class="t">Линейный обрыв</div></div>
+<div class="card" data-name="I61 Цилиндрический обрыв mcbreak_tubular" onclick="pick('I61')"><img src="mcsmenu/I61.png" alt="I61"><div class="n">I61</div><div class="t">Цилиндрический обрыв</div></div>
+<div class="card" data-name="I62 Криволинейный разрыв mcbreak_twocurved" onclick="pick('I62')"><img src="mcsmenu/I62.png" alt="I62"><div class="n">I62</div><div class="t">Криволинейный разрыв</div></div>
+<div class="card" data-name="I63 Линейный разрыв mcbreak_twolinear" onclick="pick('I63')"><img src="mcsmenu/I63.png" alt="I63"><div class="n">I63</div><div class="t">Линейный разрыв</div></div>
+<div class="card" data-name="I64  " onclick="pick('I64')"><img src="mcsmenu/I64.png" alt="I64"><div class="n">I64</div><div class="t"></div></div>
+<div class="card" data-name="I67 Менеджер расчетов mccalc" onclick="pick('I67')"><img src="mcsmenu/I67.png" alt="I67"><div class="n">I67</div><div class="t">Менеджер расчетов</div></div>
+<div class="card" data-name="I71 Базовый mcchainbase" onclick="pick('I71')"><img src="mcsmenu/I71.png" alt="I71"><div class="n">I71</div><div class="t">Базовый</div></div>
+<div class="card" data-name="I72 Цепочка mcchaincont" onclick="pick('I72')"><img src="mcsmenu/I72.png" alt="I72"><div class="n">I72</div><div class="t">Цепочка</div></div>
+<div class="card" data-name="I73 Фаска chamfer" onclick="pick('I73')"><img src="mcsmenu/I73.png" alt="I73"><div class="n">I73</div><div class="t">Фаска</div></div>
+<div class="card" data-name="I76 Фаска mcmchamfer" onclick="pick('I76')"><img src="mcsmenu/I76.png" alt="I76"><div class="n">I76</div><div class="t">Фаска</div></div>
+<div class="card" data-name="I77 Сменить представление mcchangerepresent" onclick="pick('I77')"><img src="mcsmenu/I77.png" alt="I77"><div class="n">I77</div><div class="t">Сменить представление</div></div>
+<div class="card" data-name="I78 Изменить режим перекрытия mcchcover" onclick="pick('I78')"><img src="mcsmenu/I78.png" alt="I78"><div class="n">I78</div><div class="t">Изменить режим перекрытия</div></div>
+<div class="card" data-name="I87 Включение/отключение вспомогательных линий mcclineo" onclick="pick('I87')"><img src="mcsmenu/I87.png" alt="I87"><div class="n">I87</div><div class="t">Включение/отключение вспомогательных линий</div></div>
+<div class="card" data-name="I91 Соединить объекты mcconnectto" onclick="pick('I91')"><img src="mcsmenu/I91.png" alt="I91"><div class="n">I91</div><div class="t">Соединить объекты</div></div>
+<div class="card" data-name="I92 Вспомогательная окружность mcconst_circle" onclick="pick('I92')"><img src="mcsmenu/I92.png" alt="I92"><div class="n">I92</div><div class="t">Вспомогательная окружность</div></div>
+<div class="card" data-name="I93 Вспомогательная окружность по касательной к отрезку mcconstc2" onclick="pick('I93')"><img src="mcsmenu/I93.png" alt="I93"><div class="n">I93</div><div class="t">Вспомогательная окружность по касательной к отрезку</div></div>
+<div class="card" data-name="I94 Вспомогательная концентричная окружность mcconstcc" onclick="pick('I94')"><img src="mcsmenu/I94.png" alt="I94"><div class="n">I94</div><div class="t">Вспомогательная концентричная окружность</div></div>
+<div class="card" data-name="I95 Вспомогательный квадрат, описанный вокруг окружности mcconstcircli" onclick="pick('I95')"><img src="mcsmenu/I95.png" alt="I95"><div class="n">I95</div><div class="t">Вспомогательный квадрат, описанный вокруг окружности</div></div>
+<div class="card" data-name="I96 Пересекающиеся вспомогательные линии mcconstcrs" onclick="pick('I96')"><img src="mcsmenu/I96.png" alt="I96"><div class="n">I96</div><div class="t">Пересекающиеся вспомогательные линии</div></div>
+<div class="card" data-name="I97 Удалить вспомогательные линии mcconsterase" onclick="pick('I97')"><img src="mcsmenu/I97.png" alt="I97"><div class="n">I97</div><div class="t">Удалить вспомогательные линии</div></div>
+<div class="card" data-name="I98 Вспомогательная линия по двум точкам или углу mcconsthb" onclick="pick('I98')"><img src="mcsmenu/I98.png" alt="I98"><div class="n">I98</div><div class="t">Вспомогательная линия по двум точкам или углу</div></div>
+<div class="card" data-name="I99 Вспомогательная линия по биссектрисе к углу mcconsthm" onclick="pick('I99')"><img src="mcsmenu/I99.png" alt="I99"><div class="n">I99</div><div class="t">Вспомогательная линия по биссектрисе к углу</div></div>
+<div class="card" data-name="I100 Горизонтальная вспомогательная линия mcconsthor" onclick="pick('I100')"><img src="mcsmenu/I100.png" alt="I100"><div class="n">I100</div><div class="t">Горизонтальная вспомогательная линия</div></div>
+<div class="card" data-name="I101 Вспомогательная линия под углом к отрезку mcconsthw" onclick="pick('I101')"><img src="mcsmenu/I101.png" alt="I101"><div class="n">I101</div><div class="t">Вспомогательная линия под углом к отрезку</div></div>
+<div class="card" data-name="I102 Вспомогательная окружность, касательная к двум отрезкам mcconstkr" onclick="pick('I102')"><img src="mcsmenu/I102.png" alt="I102"><div class="n">I102</div><div class="t">Вспомогательная окружность, касательная к двум отрезкам</div></div>
+<div class="card" data-name="I103 Настройки вспомогательных линий mcconstlines" onclick="pick('I103')"><img src="mcsmenu/I103.png" alt="I103"><div class="n">I103</div><div class="t">Настройки вспомогательных линий</div></div>
+<div class="card" data-name="I104 Вспомогательная линия, перпендикулярная к отрезку mcconstlot" onclick="pick('I104')"><img src="mcsmenu/I104.png" alt="I104"><div class="n">I104</div><div class="t">Вспомогательная линия, перпендикулярная к отрезку</div></div>
+<div class="card" data-name="I105 Вспомогательный перпендикуляр по двум точкам mcconstlot2" onclick="pick('I105')"><img src="mcsmenu/I105.png" alt="I105"><div class="n">I105</div><div class="t">Вспомогательный перпендикуляр по двум точкам</div></div>
+<div class="card" data-name="I106 Параллельная линия на заданном расстоянии mcconstpar" onclick="pick('I106')"><img src="mcsmenu/I106.png" alt="I106"><div class="n">I106</div><div class="t">Параллельная линия на заданном расстоянии</div></div>
+<div class="card" data-name="I107 Параллельная линия на половине заданного расстояния mcconstpar2" onclick="pick('I107')"><img src="mcsmenu/I107.png" alt="I107"><div class="n">I107</div><div class="t">Параллельная линия на половине заданного расстояния</div></div>
+<div class="card" data-name="I108 Управление зависимостями mcconstraint" onclick="pick('I108')"><img src="mcsmenu/I108.png" alt="I108"><div class="n">I108</div><div class="t">Управление зависимостями</div></div>
+<div class="card" data-name="I109 Две параллельные касательные линии mcconsttan" onclick="pick('I109')"><img src="mcsmenu/I109.png" alt="I109"><div class="n">I109</div><div class="t">Две параллельные касательные линии</div></div>
+<div class="card" data-name="I110 Вспомогательная линия, касательная к двум окружностям mcconsttc" onclick="pick('I110')"><img src="mcsmenu/I110.png" alt="I110"><div class="n">I110</div><div class="t">Вспомогательная линия, касательная к двум окружностям</div></div>
+<div class="card" data-name="I111 Вертикальная вспомогательная линия mcconstver" onclick="pick('I111')"><img src="mcsmenu/I111.png" alt="I111"><div class="n">I111</div><div class="t">Вертикальная вспомогательная линия</div></div>
+<div class="card" data-name="I112 Вспомогательные прямые, проходящие через одну точку mcconstxline" onclick="pick('I112')"><img src="mcsmenu/I112.png" alt="I112"><div class="n">I112</div><div class="t">Вспомогательные прямые, проходящие через одну точку</div></div>
+<div class="card" data-name="I113 Вспомогательные лучи, исходящие из одной точки mcconstxray" onclick="pick('I113')"><img src="mcsmenu/I113.png" alt="I113"><div class="n">I113</div><div class="t">Вспомогательные лучи, исходящие из одной точки</div></div>
+<div class="card" data-name="I114 Вспомогательная линия в направлении Z mcconstz" onclick="pick('I114')"><img src="mcsmenu/I114.png" alt="I114"><div class="n">I114</div><div class="t">Вспомогательная линия в направлении Z</div></div>
+<div class="card" data-name="I115 Преобразование таблиц AutoCAD mcconverttable" onclick="pick('I115')"><img src="mcsmenu/I115.png" alt="I115"><div class="n">I115</div><div class="t">Преобразование таблиц AutoCAD</div></div>
+<div class="card" data-name="I116 Преобразование таблиц nanoCAD в .dwg converttablen" onclick="pick('I116')"><img src="mcsmenu/I116.png" alt="I116"><div class="n">I116</div><div class="t">Преобразование таблиц nanoCAD в .dwg</div></div>
+<div class="card" data-name="I117 Преобразование таблиц .dwg в nanoCAD converttablea" onclick="pick('I117')"><img src="mcsmenu/I117.png" alt="I117"><div class="n">I117</div><div class="t">Преобразование таблиц .dwg в nanoCAD</div></div>
+<div class="card" data-name="I118 Копировать фрагмент mccopy" onclick="pick('I118')"><img src="mcsmenu/I118.png" alt="I118"><div class="n">I118</div><div class="t">Копировать фрагмент</div></div>
+<div class="card" data-name="I121 Обновить перекрытия mccover" onclick="pick('I121')"><img src="mcsmenu/I121.png" alt="I121"><div class="n">I121</div><div class="t">Обновить перекрытия</div></div>
+<div class="card" data-name="I123 Создать маркер mccreateumarker" onclick="pick('I123')"><img src="mcsmenu/I123.png" alt="I123"><div class="n">I123</div><div class="t">Создать маркер</div></div>
+<div class="card" data-name="I124 Пользовательский объект mccustomobj" onclick="pick('I124')"><img src="mcsmenu/I124.png" alt="I124"><div class="n">I124</div><div class="t">Пользовательский объект</div></div>
+<div class="card" data-name="I127 Обозначение базы mcdatid" onclick="pick('I127')"><img src="mcsmenu/I127.png" alt="I127"><div class="n">I127</div><div class="t">Обозначение базы</div></div>
+<div class="card" data-name="I135 Удалить контур обрезки mctrimdelete" onclick="pick('I135')"><img src="mcsmenu/I135.png" alt="I135"><div class="n">I135</div><div class="t">Удалить контур обрезки</div></div>
+<div class="card" data-name="I137 Удалить крепежные детали mcdelspart" onclick="pick('I137')"><img src="mcsmenu/I137.png" alt="I137"><div class="n">I137</div><div class="t">Удалить крепежные детали</div></div>
+<div class="card" data-name="I139 Размеры dim" onclick="pick('I139')"><img src="mcsmenu/I139.png" alt="I139"><div class="n">I139</div><div class="t">Размеры</div></div>
+<div class="card" data-name="I142 Размеры mcmdim" onclick="pick('I142')"><img src="mcsmenu/I142.png" alt="I142"><div class="n">I142</div><div class="t">Размеры</div></div>
+<div class="card" data-name="I143 Параллельный размер mcmdimali" onclick="pick('I143')"><img src="mcsmenu/I143.png" alt="I143"><div class="n">I143</div><div class="t">Параллельный размер</div></div>
+<div class="card" data-name="I144 Угловой размер mcmdimang" onclick="pick('I144')"><img src="mcsmenu/I144.png" alt="I144"><div class="n">I144</div><div class="t">Угловой размер</div></div>
+<div class="card" data-name="I145 Дуговой размер dimarc" onclick="pick('I145')"><img src="mcsmenu/I145.png" alt="I145"><div class="n">I145</div><div class="t">Дуговой размер</div></div>
+<div class="card" data-name="I148 Дуговой размер mcmdimarc" onclick="pick('I148')"><img src="mcsmenu/I148.png" alt="I148"><div class="n">I148</div><div class="t">Дуговой размер</div></div>
+<div class="card" data-name="I150 Разорвать размер mcmdimbreak" onclick="pick('I150')"><img src="mcsmenu/I150.png" alt="I150"><div class="n">I150</div><div class="t">Разорвать размер</div></div>
+<div class="card" data-name="I152 Диаметр mcmdimdia" onclick="pick('I152')"><img src="mcsmenu/I152.png" alt="I152"><div class="n">I152</div><div class="t">Диаметр</div></div>
+<div class="card" data-name="I153 Групповой mcdimgroup" onclick="pick('I153')"><img src="mcsmenu/I153.png" alt="I153"><div class="n">I153</div><div class="t">Групповой</div></div>
+<div class="card" data-name="I154 Горизонтальный размер mcmdimhor" onclick="pick('I154')"><img src="mcsmenu/I154.png" alt="I154"><div class="n">I154</div><div class="t">Горизонтальный размер</div></div>
+<div class="card" data-name="I155 Большой радиус mcdimhrad" onclick="pick('I155')"><img src="mcsmenu/I155.png" alt="I155"><div class="n">I155</div><div class="t">Большой радиус</div></div>
+<div class="card" data-name="I156 Ординатный размер mcmdimord" onclick="pick('I156')"><img src="mcsmenu/I156.png" alt="I156"><div class="n">I156</div><div class="t">Ординатный размер</div></div>
+<div class="card" data-name="I157 Радиус mcmdimrad" onclick="pick('I157')"><img src="mcsmenu/I157.png" alt="I157"><div class="n">I157</div><div class="t">Радиус</div></div>
+<div class="card" data-name="I158 Восстановить размер mcmdimunbreak" onclick="pick('I158')"><img src="mcsmenu/I158.png" alt="I158"><div class="n">I158</div><div class="t">Восстановить размер</div></div>
+<div class="card" data-name="I159 Вертикальный размер mcmdimver" onclick="pick('I159')"><img src="mcsmenu/I159.png" alt="I159"><div class="n">I159</div><div class="t">Вертикальный размер</div></div>
+<div class="card" data-name="I163 Разделка кромок под сварку mcedgepreparation" onclick="pick('I163')"><img src="mcsmenu/I163.png" alt="I163"><div class="n">I163</div><div class="t">Разделка кромок под сварку</div></div>
+<div class="card" data-name="I164 Редактирование mcedit" onclick="pick('I164')"><img src="mcsmenu/I164.png" alt="I164"><div class="n">I164</div><div class="t">Редактирование</div></div>
+<div class="card" data-name="I167 Редактирование группы mceditgroups" onclick="pick('I167')"><img src="mcsmenu/I167.png" alt="I167"><div class="n">I167</div><div class="t">Редактирование группы</div></div>
+<div class="card" data-name="I169 Выносные виды mceview" onclick="pick('I169')"><img src="mcsmenu/I169.png" alt="I169"><div class="n">I169</div><div class="t">Выносные виды</div></div>
+<div class="card" data-name="I171 Разбить все объекты mcexplodeall" onclick="pick('I171')"><img src="mcsmenu/I171.png" alt="I171"><div class="n">I171</div><div class="t">Разбить все объекты</div></div>
+<div class="card" data-name="I172 Разбить примитивы mcexplodepseudo" onclick="pick('I172')"><img src="mcsmenu/I172.png" alt="I172"><div class="n">I172</div><div class="t">Разбить примитивы</div></div>
+<div class="card" data-name="I174 Экспортировать в файл mcexporttofile" onclick="pick('I174')"><img src="mcsmenu/I174.png" alt="I174"><div class="n">I174</div><div class="t">Экспортировать в файл</div></div>
+<div class="card" data-name="I177 Удалить форму mcfdel" onclick="pick('I177')"><img src="mcsmenu/I177.png" alt="I177"><div class="n">I177</div><div class="t">Удалить форму</div></div>
+<div class="card" data-name="I179 Редактирование mcfedit" onclick="pick('I179')"><img src="mcsmenu/I179.png" alt="I179"><div class="n">I179</div><div class="t">Редактирование</div></div>
+<div class="card" data-name="I181 Заливка отверстий mcfill" onclick="pick('I181')"><img src="mcsmenu/I181.png" alt="I181"><div class="n">I181</div><div class="t">Заливка отверстий</div></div>
+<div class="card" data-name="I182 Сопряжение fillet" onclick="pick('I182')"><img src="mcsmenu/I182.png" alt="I182"><div class="n">I182</div><div class="t">Сопряжение</div></div>
+<div class="card" data-name="I185 Сопряжение mcmfillet" onclick="pick('I185')"><img src="mcsmenu/I185.png" alt="I185"><div class="n">I185</div><div class="t">Сопряжение</div></div>
+<div class="card" data-name="I186 Найти и заменить... mcfind" onclick="pick('I186')"><img src="mcsmenu/I186.png" alt="I186"><div class="n">I186</div><div class="t">Найти и заменить...</div></div>
+<div class="card" data-name="I187  " onclick="pick('I187')"><img src="mcsmenu/I187.png" alt="I187"><div class="n">I187</div><div class="t"></div></div>
+<div class="card" data-name="I188  " onclick="pick('I188')"><img src="mcsmenu/I188.png" alt="I188"><div class="n">I188</div><div class="t"></div></div>
+<div class="card" data-name="I189 Неразъемные соединения mcfix" onclick="pick('I189')"><img src="mcsmenu/I189.png" alt="I189"><div class="n">I189</div><div class="t">Неразъемные соединения</div></div>
+<div class="card" data-name="I198 Форматы mcformat" onclick="pick('I198')"><img src="mcsmenu/I198.png" alt="I198"><div class="n">I198</div><div class="t">Форматы</div></div>
+<div class="card" data-name="I199 Мастер создания формата mcformatwiz" onclick="pick('I199')"><img src="mcsmenu/I199.png" alt="I199"><div class="n">I199</div><div class="t">Мастер создания формата</div></div>
+<div class="card" data-name="I201 Свободно mcfree_kwd" onclick="pick('I201')"><img src="mcsmenu/I201.png" alt="I201"><div class="n">I201</div><div class="t">Свободно</div></div>
+<div class="card" data-name="I203 Геометрические характеристики сечения mcgcs" onclick="pick('I203')"><img src="mcsmenu/I203.png" alt="I203"><div class="n">I203</div><div class="t">Геометрические характеристики сечения</div></div>
+<div class="card" data-name="I205 Взять масштаб mcgetscale" onclick="pick('I205')"><img src="mcsmenu/I205.png" alt="I205"><div class="n">I205</div><div class="t">Взять масштаб</div></div>
+<div class="card" data-name="I207 Обозначение уклона mcgrad" onclick="pick('I207')"><img src="mcsmenu/I207.png" alt="I207"><div class="n">I207</div><div class="t">Обозначение уклона</div></div>
+<div class="card" data-name="I212 Группировать объекты mcgroupobjects" onclick="pick('I212')"><img src="mcsmenu/I212.png" alt="I212"><div class="n">I212</div><div class="t">Группировать объекты</div></div>
+<div class="card" data-name="I216 Создание штриховки mchpattern" onclick="pick('I216')"><img src="mcsmenu/I216.png" alt="I216"><div class="n">I216</div><div class="t">Создание штриховки</div></div>
+<div class="card" data-name="I217 Импорт idf (brd) файлов mcidfconvert" onclick="pick('I217')"><img src="mcsmenu/I217.png" alt="I217"><div class="n">I217</div><div class="t">Импорт idf (brd) файлов</div></div>
+<div class="card" data-name="I223 Вставка группы mcinsertgroup" onclick="pick('I223')"><img src="mcsmenu/I223.png" alt="I223"><div class="n">I223</div><div class="t">Вставка группы</div></div>
+<div class="card" data-name="I227 Врезка арматуры в трубы mcinshnode" onclick="pick('I227')"><img src="mcsmenu/I227.png" alt="I227"><div class="n">I227</div><div class="t">Врезка арматуры в трубы</div></div>
+<div class="card" data-name="I233 Редактирование по месту mcipedit" onclick="pick('I233')"><img src="mcsmenu/I233.png" alt="I233"><div class="n">I233</div><div class="t">Редактирование по месту</div></div>
+<div class="card" data-name="I234 Редактирование таблицы на чертеже mcipedittbl" onclick="pick('I234')"><img src="mcsmenu/I234.png" alt="I234"><div class="n">I234</div><div class="t">Редактирование таблицы на чертеже</div></div>
+<div class="card" data-name="I237 Болтовое соединение mcjoint" onclick="pick('I237')"><img src="mcsmenu/I237.png" alt="I237"><div class="n">I237</div><div class="t">Болтовое соединение</div></div>
+<div class="card" data-name="I252 Маркировка линейных конструкций mclinm" onclick="pick('I252')"><img src="mcsmenu/I252.png" alt="I252"><div class="n">I252</div><div class="t">Маркировка линейных конструкций</div></div>
+<div class="card" data-name="I258 Маркирование и клеймение mcmark" onclick="pick('I258')"><img src="mcsmenu/I258.png" alt="I258"><div class="n">I258</div><div class="t">Маркирование и клеймение</div></div>
+<div class="card" data-name="I260 Измерения mcmeasure" onclick="pick('I260')"><img src="mcsmenu/I260.png" alt="I260"><div class="n">I260</div><div class="t">Измерения</div></div>
+<div class="card" data-name="I261 Перевернуть объект mcmirrowstd" onclick="pick('I261')"><img src="mcsmenu/I261.png" alt="I261"><div class="n">I261</div><div class="t">Перевернуть объект</div></div>
+<div class="card" data-name="I262 Переместить вниз mcmovedown" onclick="pick('I262')"><img src="mcsmenu/I262.png" alt="I262"><div class="n">I262</div><div class="t">Переместить вниз</div></div>
+<div class="card" data-name="I264 Переместить вверх mcmoveup" onclick="pick('I264')"><img src="mcsmenu/I264.png" alt="I264"><div class="n">I264</div><div class="t">Переместить вверх</div></div>
+<div class="card" data-name="I266  " onclick="pick('I266')"><img src="mcsmenu/I266.png" alt="I266"><div class="n">I266</div><div class="t"></div></div>
+<div class="card" data-name="I268 Универсальная выноска mcnote" onclick="pick('I268')"><img src="mcsmenu/I268.png" alt="I268"><div class="n">I268</div><div class="t">Универсальная выноска</div></div>
+<div class="card" data-name="I269 Гребенчатая выноска mcnotec" onclick="pick('I269')"><img src="mcsmenu/I269.png" alt="I269"><div class="n">I269</div><div class="t">Гребенчатая выноска</div></div>
+<div class="card" data-name="I270 Цепная выноска mcnoteh" onclick="pick('I270')"><img src="mcsmenu/I270.png" alt="I270"><div class="n">I270</div><div class="t">Цепная выноска</div></div>
+<div class="card" data-name="I271 Узловая выноска mcnotek" onclick="pick('I271')"><img src="mcsmenu/I271.png" alt="I271"><div class="n">I271</div><div class="t">Узловая выноска</div></div>
+<div class="card" data-name="I272 Выноска для многослойных конструкций mcnotem" onclick="pick('I272')"><img src="mcsmenu/I272.png" alt="I272"><div class="n">I272</div><div class="t">Выноска для многослойных конструкций</div></div>
+<div class="card" data-name="I273 Позиционная выноска mcnotep" onclick="pick('I273')"><img src="mcsmenu/I273.png" alt="I273"><div class="n">I273</div><div class="t">Позиционная выноска</div></div>
+<div class="card" data-name="I274 Узловая секущая выноска mcnotes" onclick="pick('I274')"><img src="mcsmenu/I274.png" alt="I274"><div class="n">I274</div><div class="t">Узловая секущая выноска</div></div>
+<div class="card" data-name="I280 Параллельно mcparal_kwd" onclick="pick('I280')"><img src="mcsmenu/I280.png" alt="I280"><div class="n">I280</div><div class="t">Параллельно</div></div>
+<div class="card" data-name="I281 Настройки mcparams" onclick="pick('I281')"><img src="mcsmenu/I281.png" alt="I281"><div class="n">I281</div><div class="t">Настройки</div></div>
+<div class="card" data-name="I282 Перпендикулярно mcperp_kwd" onclick="pick('I282')"><img src="mcsmenu/I282.png" alt="I282"><div class="n">I282</div><div class="t">Перпендикулярно</div></div>
+<div class="card" data-name="I284 Перевставка объекта mcpickpoint" onclick="pick('I284')"><img src="mcsmenu/I284.png" alt="I284"><div class="n">I284</div><div class="t">Перевставка объекта</div></div>
+<div class="card" data-name="I285 Трубопроводы mcpipe" onclick="pick('I285')"><img src="mcsmenu/I285.png" alt="I285"><div class="n">I285</div><div class="t">Трубопроводы</div></div>
+<div class="card" data-name="I286 Добавить линию-выноску mcpladd" onclick="pick('I286')"><img src="mcsmenu/I286.png" alt="I286"><div class="n">I286</div><div class="t">Добавить линию-выноску</div></div>
+<div class="card" data-name="I287  " onclick="pick('I287')"><img src="mcsmenu/I287.png" alt="I287"><div class="n">I287</div><div class="t"></div></div>
+<div class="card" data-name="I288 Удалить линию-выноску mcpldel" onclick="pick('I288')"><img src="mcsmenu/I288.png" alt="I288"><div class="n">I288</div><div class="t">Удалить линию-выноску</div></div>
+<div class="card" data-name="I292 Перецепить линию-выноску mcplrec" onclick="pick('I292')"><img src="mcsmenu/I292.png" alt="I292"><div class="n">I292</div><div class="t">Перецепить линию-выноску</div></div>
+<div class="card" data-name="I293 Раскладка плитки mcpltarray" onclick="pick('I293')"><img src="mcsmenu/I293.png" alt="I293"><div class="n">I293</div><div class="t">Раскладка плитки</div></div>
+<div class="card" data-name="I296 Обозначение позиции mcpos" onclick="pick('I296')"><img src="mcsmenu/I296.png" alt="I296"><div class="n">I296</div><div class="t">Обозначение позиции</div></div>
+<div class="card" data-name="I297 Выровнять выноски спецификации mcposalign" onclick="pick('I297')"><img src="mcsmenu/I297.png" alt="I297"><div class="n">I297</div><div class="t">Выровнять выноски спецификации</div></div>
+<div class="card" data-name="I298 Позиция mcposition" onclick="pick('I298')"><img src="mcsmenu/I298.png" alt="I298"><div class="n">I298</div><div class="t">Позиция</div></div>
+<div class="card" data-name="I300 Переопределение параметров mcpr" onclick="pick('I300')"><img src="mcsmenu/I300.png" alt="I300"><div class="n">I300</div><div class="t">Переопределение параметров</div></div>
+<div class="card" data-name="I302 Быстрый выбор mcqs" onclick="pick('I302')"><img src="mcsmenu/I302.png" alt="I302"><div class="n">I302</div><div class="t">Быстрый выбор</div></div>
+<div class="card" data-name="I307 Распознавание форматов mcrecf" onclick="pick('I307')"><img src="mcsmenu/I307.png" alt="I307"><div class="n">I307</div><div class="t">Распознавание форматов</div></div>
+<div class="card" data-name="I309 Распознавание символов mcrecs" onclick="pick('I309')"><img src="mcsmenu/I309.png" alt="I309"><div class="n">I309</div><div class="t">Распознавание символов</div></div>
+<div class="card" data-name="I310 Распознавание спецификаций mcrecspec" onclick="pick('I310')"><img src="mcsmenu/I310.png" alt="I310"><div class="n">I310</div><div class="t">Распознавание спецификаций</div></div>
+<div class="card" data-name="I312 Распознавание таблиц mcrectable" onclick="pick('I312')"><img src="mcsmenu/I312.png" alt="I312"><div class="n">I312</div><div class="t">Распознавание таблиц</div></div>
+<div class="card" data-name="I317 Показать зависимости mcrefshow" onclick="pick('I317')"><img src="mcsmenu/I317.png" alt="I317"><div class="n">I317</div><div class="t">Показать зависимости</div></div>
+<div class="card" data-name="I318 Обновить mcregen" onclick="pick('I318')"><img src="mcsmenu/I318.png" alt="I318"><div class="n">I318</div><div class="t">Обновить</div></div>
+<div class="card" data-name="I319 Обновить стандартные детали mcregenstd" onclick="pick('I319')"><img src="mcsmenu/I319.png" alt="I319"><div class="n">I319</div><div class="t">Обновить стандартные детали</div></div>
+<div class="card" data-name="I323 Заклепочное соединение mcrivet" onclick="pick('I323')"><img src="mcsmenu/I323.png" alt="I323"><div class="n">I323</div><div class="t">Заклепочное соединение</div></div>
+<div class="card" data-name="I332 Мастер проектирования трубопроводов mcroute" onclick="pick('I332')"><img src="mcsmenu/I332.png" alt="I332"><div class="n">I332</div><div class="t">Мастер проектирования трубопроводов</div></div>
+<div class="card" data-name="I334  " onclick="pick('I334')"><img src="mcsmenu/I334.png" alt="I334"><div class="n">I334</div><div class="t"></div></div>
+<div class="card" data-name="I337 Разрезы, сечения mcsect" onclick="pick('I337')"><img src="mcsmenu/I337.png" alt="I337"><div class="n">I337</div><div class="t">Разрезы, сечения</div></div>
+<div class="card" data-name="I340 Установить стили по ГОСТ mcsetgost" onclick="pick('I340')"><img src="mcsmenu/I340.png" alt="I340"><div class="n">I340</div><div class="t">Установить стили по ГОСТ</div></div>
+<div class="card" data-name="I341 Установить масштаб mcsetscale" onclick="pick('I341')"><img src="mcsmenu/I341.png" alt="I341"><div class="n">I341</div><div class="t">Установить масштаб</div></div>
+<div class="card" data-name="I345 Маркер размера mcsk" onclick="pick('I345')"><img src="mcsmenu/I345.png" alt="I345"><div class="n">I345</div><div class="t">Маркер размера</div></div>
+<div class="card" data-name="I346 Выделение обрабатываемой поверхности mcskbold" onclick="pick('I346')"><img src="mcsmenu/I346.png" alt="I346"><div class="n">I346</div><div class="t">Выделение обрабатываемой поверхности</div></div>
+<div class="card" data-name="I348 Ренумерация маркеров размеров mcskrenum" onclick="pick('I348')"><img src="mcsmenu/I348.png" alt="I348"><div class="n">I348</div><div class="t">Ренумерация маркеров размеров</div></div>
+<div class="card" data-name="I349 Выравнивание маркеров размеров mcsksort" onclick="pick('I349')"><img src="mcsmenu/I349.png" alt="I349"><div class="n">I349</div><div class="t">Выравнивание маркеров размеров</div></div>
+<div class="card" data-name="I351 Мастер объектов mcsmaster" onclick="pick('I351')"><img src="mcsmenu/I351.png" alt="I351"><div class="n">I351</div><div class="t">Мастер объектов</div></div>
+<div class="card" data-name="I353 Сортировка видов, разрезов... mcsort" onclick="pick('I353')"><img src="mcsmenu/I353.png" alt="I353"><div class="n">I353</div><div class="t">Сортировка видов, разрезов...</div></div>
+<div class="card" data-name="I355 Редактор спецификации mcspecification" onclick="pick('I355')"><img src="mcsmenu/I355.png" alt="I355"><div class="n">I355</div><div class="t">Редактор спецификации</div></div>
+<div class="card" data-name="I356 Пружина сжатия mcspr2" onclick="pick('I356')"><img src="mcsmenu/I356.png" alt="I356"><div class="n">I356</div><div class="t">Пружина сжатия</div></div>
+<div class="card" data-name="I357 Пружина растяжения mcsprt2" onclick="pick('I357')"><img src="mcsmenu/I357.png" alt="I357"><div class="n">I357</div><div class="t">Пружина растяжения</div></div>
+<div class="card" data-name="I360 Мастер создания штампа mcstampwiz" onclick="pick('I360')"><img src="mcsmenu/I360.png" alt="I360"><div class="n">I360</div><div class="t">Мастер создания штампа</div></div>
+<div class="card" data-name="I361 Стандартные mcstd" onclick="pick('I361')"><img src="mcsmenu/I361.png" alt="I361"><div class="n">I361</div><div class="t">Стандартные</div></div>
+<div class="card" data-name="I363 Арматура трубопроводов mcstdpipe" onclick="pick('I363')"><img src="mcsmenu/I363.png" alt="I363"><div class="n">I363</div><div class="t">Арматура трубопроводов</div></div>
+<div class="card" data-name="I365 Шероховатость mcsurf" onclick="pick('I365')"><img src="mcsmenu/I365.png" alt="I365"><div class="n">I365</div><div class="t">Шероховатость</div></div>
+<div class="card" data-name="I366 Конвертация старого символа шероховатости mcsurfconv" onclick="pick('I366')"><img src="mcsmenu/I366.png" alt="I366"><div class="n">I366</div><div class="t">Конвертация старого символа шероховатости</div></div>
+<div class="card" data-name="I367 Шероховатость (старая) mcsurfold" onclick="pick('I367')"><img src="mcsmenu/I367.png" alt="I367"><div class="n">I367</div><div class="t">Шероховатость (старая)</div></div>
+<div class="card" data-name="I368 Таблицы mctable" onclick="pick('I368')"><img src="mcsmenu/I368.png" alt="I368"><div class="n">I368</div><div class="t">Таблицы</div></div>
+<div class="card" data-name="I369 Экспорт таблицы в Excel mctableexcelexport" onclick="pick('I369')"><img src="mcsmenu/I369.png" alt="I369"><div class="n">I369</div><div class="t">Экспорт таблицы в Excel</div></div>
+<div class="card" data-name="I370 Импорт таблицы из Excel mctableexcelimport" onclick="pick('I370')"><img src="mcsmenu/I370.png" alt="I370"><div class="n">I370</div><div class="t">Импорт таблицы из Excel</div></div>
+<div class="card" data-name="I373  " onclick="pick('I373')"><img src="mcsmenu/I373.png" alt="I373"><div class="n">I373</div><div class="t"></div></div>
+<div class="card" data-name="I385 Тех. характеристики mctd" onclick="pick('I385')"><img src="mcsmenu/I385.png" alt="I385"><div class="n">I385</div><div class="t">Тех. характеристики</div></div>
+<div class="card" data-name="I386 Добавить столбец mcteaddcol_kwd" onclick="pick('I386')"><img src="mcsmenu/I386.png" alt="I386"><div class="n">I386</div><div class="t">Добавить столбец</div></div>
+<div class="card" data-name="I387 Добавить строку mcteaddrow_kwd" onclick="pick('I387')"><img src="mcsmenu/I387.png" alt="I387"><div class="n">I387</div><div class="t">Добавить строку</div></div>
+<div class="card" data-name="I388 Калькулятор mctecalculator_kwd" onclick="pick('I388')"><img src="mcsmenu/I388.png" alt="I388"><div class="n">I388</div><div class="t">Калькулятор</div></div>
+<div class="card" data-name="I389 Свойства ячейки mctecellprops_kwd" onclick="pick('I389')"><img src="mcsmenu/I389.png" alt="I389"><div class="n">I389</div><div class="t">Свойства ячейки</div></div>
+<div class="card" data-name="I390 Свойства ячеек mctecellsprops_kwd" onclick="pick('I390')"><img src="mcsmenu/I390.png" alt="I390"><div class="n">I390</div><div class="t">Свойства ячеек</div></div>
+<div class="card" data-name="I391 Свойства столбца mctecolprops_kwd" onclick="pick('I391')"><img src="mcsmenu/I391.png" alt="I391"><div class="n">I391</div><div class="t">Свойства столбца</div></div>
+<div class="card" data-name="I392 Удалить столбец mctedelcol_kwd" onclick="pick('I392')"><img src="mcsmenu/I392.png" alt="I392"><div class="n">I392</div><div class="t">Удалить столбец</div></div>
+<div class="card" data-name="I393 Удалить строку mctedelrow_kwd" onclick="pick('I393')"><img src="mcsmenu/I393.png" alt="I393"><div class="n">I393</div><div class="t">Удалить строку</div></div>
+<div class="card" data-name="I394 Объединить ячейки mctegroupcells_kwd" onclick="pick('I394')"><img src="mcsmenu/I394.png" alt="I394"><div class="n">I394</div><div class="t">Объединить ячейки</div></div>
+<div class="card" data-name="I397 Записная книжка mctenotebook_kwd" onclick="pick('I397')"><img src="mcsmenu/I397.png" alt="I397"><div class="n">I397</div><div class="t">Записная книжка</div></div>
+<div class="card" data-name="I398 Карандаш mctepen_kwd" onclick="pick('I398')"><img src="mcsmenu/I398.png" alt="I398"><div class="n">I398</div><div class="t">Карандаш</div></div>
+<div class="card" data-name="I399 Выход mctequit_kwd" onclick="pick('I399')"><img src="mcsmenu/I399.png" alt="I399"><div class="n">I399</div><div class="t">Выход</div></div>
+<div class="card" data-name="I400 Свойства строки mcterowprops_kwd" onclick="pick('I400')"><img src="mcsmenu/I400.png" alt="I400"><div class="n">I400</div><div class="t">Свойства строки</div></div>
+<div class="card" data-name="I401 Выборочная сумма mcteselectivesumm_kwd" onclick="pick('I401')"><img src="mcsmenu/I401.png" alt="I401"><div class="n">I401</div><div class="t">Выборочная сумма</div></div>
+<div class="card" data-name="I402 Разбить ячейки mctesplitcell_kwd" onclick="pick('I402')"><img src="mcsmenu/I402.png" alt="I402"><div class="n">I402</div><div class="t">Разбить ячейки</div></div>
+<div class="card" data-name="I403  " onclick="pick('I403')"><img src="mcsmenu/I403.png" alt="I403"><div class="n">I403</div><div class="t"></div></div>
+<div class="card" data-name="I404 Сумма mctesumm_kwd" onclick="pick('I404')"><img src="mcsmenu/I404.png" alt="I404"><div class="n">I404</div><div class="t">Сумма</div></div>
+<div class="card" data-name="I405 Специальные символы mctesymboldlg_kwd" onclick="pick('I405')"><img src="mcsmenu/I405.png" alt="I405"><div class="n">I405</div><div class="t">Специальные символы</div></div>
+<div class="card" data-name="I406 Разъединить ячейки mcteungroupcell_kwd" onclick="pick('I406')"><img src="mcsmenu/I406.png" alt="I406"><div class="n">I406</div><div class="t">Разъединить ячейки</div></div>
+<div class="card" data-name="I408 Допуски формы и расположения mctol" onclick="pick('I408')"><img src="mcsmenu/I408.png" alt="I408"><div class="n">I408</div><div class="t">Допуски формы и расположения</div></div>
+<div class="card" data-name="I411 Тех. требования mctt" onclick="pick('I411')"><img src="mcsmenu/I411.png" alt="I411"><div class="n">I411</div><div class="t">Тех. требования</div></div>
+<div class="card" data-name="I412 Мастер шаблонов mctwiz" onclick="pick('I412')"><img src="mcsmenu/I412.png" alt="I412"><div class="n">I412</div><div class="t">Мастер шаблонов</div></div>
+<div class="card" data-name="I415  " onclick="pick('I415')"><img src="mcsmenu/I415.png" alt="I415"><div class="n">I415</div><div class="t"></div></div>
+<div class="card" data-name="I416 Виды mcview" onclick="pick('I416')"><img src="mcsmenu/I416.png" alt="I416"><div class="n">I416</div><div class="t">Виды</div></div>
+<div class="card" data-name="I418 Обозначения видов, разрезов mcvsdesc" onclick="pick('I418')"><img src="mcsmenu/I418.png" alt="I418"><div class="n">I418</div><div class="t">Обозначения видов, разрезов</div></div>
+<div class="card" data-name="I433 Сварной шов mcweld" onclick="pick('I433')"><img src="mcsmenu/I433.png" alt="I433"><div class="n">I433</div><div class="t">Сварной шов</div></div>
+<div class="card" data-name="I436 Проверить модель mcwiz" onclick="pick('I436')"><img src="mcsmenu/I436.png" alt="I436"><div class="n">I436</div><div class="t">Проверить модель</div></div>
+<div class="card" data-name="I438 Массив объектов mcwizarr" onclick="pick('I438')"><img src="mcsmenu/I438.png" alt="I438"><div class="n">I438</div><div class="t">Массив объектов</div></div>
+<div class="card" data-name="I439 Контур подавления mcwizcontour" onclick="pick('I439')"><img src="mcsmenu/I439.png" alt="I439"><div class="n">I439</div><div class="t">Контур подавления</div></div>
+<div class="card" data-name="I440 Точка вставки mcwizins" onclick="pick('I440')"><img src="mcsmenu/I440.png" alt="I440"><div class="n">I440</div><div class="t">Точка вставки</div></div>
+<div class="card" data-name="I441 Установить параметр mcwizparam" onclick="pick('I441')"><img src="mcsmenu/I441.png" alt="I441"><div class="n">I441</div><div class="t">Установить параметр</div></div>
+<div class="card" data-name="I442 Контур штриховки mcwizsectcontour" onclick="pick('I442')"><img src="mcsmenu/I442.png" alt="I442"><div class="n">I442</div><div class="t">Контур штриховки</div></div>
+<div class="card" data-name="I444 Ось симметрии mcwizsym" onclick="pick('I444')"><img src="mcsmenu/I444.png" alt="I444"><div class="n">I444</div><div class="t">Ось симметрии</div></div>
+<div class="card" data-name="I445 Сварное соединение mcwj" onclick="pick('I445')"><img src="mcsmenu/I445.png" alt="I445"><div class="n">I445</div><div class="t">Сварное соединение</div></div>
+<div class="card" data-name="I446 Сварной катет mcwleg" onclick="pick('I446')"><img src="mcsmenu/I446.png" alt="I446"><div class="n">I446</div><div class="t">Сварной катет</div></div>
+<div class="card" data-name="I454  " onclick="pick('I454')"><img src="mcsmenu/I454.png" alt="I454"><div class="n">I454</div><div class="t"></div></div>
+<div class="card" data-name="I460 Выровнять размеры mcdimarrange" onclick="pick('I460')"><img src="mcsmenu/I460.png" alt="I460"><div class="n">I460</div><div class="t">Выровнять размеры</div></div>
+<div class="card" data-name="I463 Экстрактор атрибутов mcdataextraction" onclick="pick('I463')"><img src="mcsmenu/I463.png" alt="I463"><div class="n">I463</div><div class="t">Экстрактор атрибутов</div></div>
+<div class="card" data-name="I477 Масштаб элементов оформления mcgscale" onclick="pick('I477')"><img src="mcsmenu/I477.png" alt="I477"><div class="n">I477</div><div class="t">Масштаб элементов оформления</div></div>
+<div class="card" data-name="I478 Обновить mcregenobj" onclick="pick('I478')"><img src="mcsmenu/I478.png" alt="I478"><div class="n">I478</div><div class="t">Обновить</div></div>
+<div class="card" data-name="I501 Сохранить файл на диск и обновить в TDMS mctdmsac_save" onclick="pick('I501')"><img src="mcsmenu/I501.png" alt="I501"><div class="n">I501</div><div class="t">Сохранить файл на диск и обновить в TDMS</div></div>
+<div class="card" data-name="I502 Показать панель TDMS mctdmsac_show_sheet" onclick="pick('I502')"><img src="mcsmenu/I502.png" alt="I502"><div class="n">I502</div><div class="t">Показать панель TDMS</div></div>
+<div class="card" data-name="I503 Назначить TDMS атрибуты формату mctdmsac_asgn_format" onclick="pick('I503')"><img src="mcsmenu/I503.png" alt="I503"><div class="n">I503</div><div class="t">Назначить TDMS атрибуты формату</div></div>
+<div class="card" data-name="I504 Найти в дереве mctdmsac_find_tree" onclick="pick('I504')"><img src="mcsmenu/I504.png" alt="I504"><div class="n">I504</div><div class="t">Найти в дереве</div></div>
+<div class="card" data-name="I505 Вставить атрибут TDMS mctdmsac_ins_attr" onclick="pick('I505')"><img src="mcsmenu/I505.png" alt="I505"><div class="n">I505</div><div class="t">Вставить атрибут TDMS</div></div>
+<div class="card" data-name="I506 Вставить блок mctdmsac_ins_block" onclick="pick('I506')"><img src="mcsmenu/I506.png" alt="I506"><div class="n">I506</div><div class="t">Вставить блок</div></div>
+<div class="card" data-name="I507 Сохранить файл на диск и загрузить в произвольный объект TDMS mctdmsac_save_as" onclick="pick('I507')"><img src="mcsmenu/I507.png" alt="I507"><div class="n">I507</div><div class="t">Сохранить файл на диск и загрузить в произвольный объект TDMS</div></div>
+<div class="card" data-name="I508 Обновить атрибуты и внешние ссылки mctdmsac_upd_all" onclick="pick('I508')"><img src="mcsmenu/I508.png" alt="I508"><div class="n">I508</div><div class="t">Обновить атрибуты и внешние ссылки</div></div>
+<div class="card" data-name="I509 Менеджер внешних ссылок mctdmsac_xrefs" onclick="pick('I509')"><img src="mcsmenu/I509.png" alt="I509"><div class="n">I509</div><div class="t">Менеджер внешних ссылок</div></div>
+<div class="card" data-name="I532 Создать трассу mccreatetrace" onclick="pick('I532')"><img src="mcsmenu/I532.png" alt="I532"><div class="n">I532</div><div class="t">Создать трассу</div></div>
+<div class="card" data-name="I589  " onclick="pick('I589')"><img src="mcsmenu/I589.png" alt="I589"><div class="n">I589</div><div class="t"></div></div>
+<div class="card" data-name="I594 Редактор титульных листов mctbe" onclick="pick('I594')"><img src="mcsmenu/I594.png" alt="I594"><div class="n">I594</div><div class="t">Редактор титульных листов</div></div>
+<div class="card" data-name="I599 Обложки и титульные листы mcformat2" onclick="pick('I599')"><img src="mcsmenu/I599.png" alt="I599"><div class="n">I599</div><div class="t">Обложки и титульные листы</div></div>
+<div class="card" data-name="I601 Таблица отверстий mcholechart" onclick="pick('I601')"><img src="mcsmenu/I601.png" alt="I601"><div class="n">I601</div><div class="t">Таблица отверстий</div></div>
+<div class="card" data-name="I604 Таблица предельных отклонений mcfitlist" onclick="pick('I604')"><img src="mcsmenu/I604.png" alt="I604"><div class="n">I604</div><div class="t">Таблица предельных отклонений</div></div>
+<div class="card" data-name="I669 Виды mcviewobj" onclick="pick('I669')"><img src="mcsmenu/I669.png" alt="I669"><div class="n">I669</div><div class="t">Виды</div></div>
+<div class="card" data-name="I673 Добавить линию-выноску mcpl" onclick="pick('I673')"><img src="mcsmenu/I673.png" alt="I673"><div class="n">I673</div><div class="t">Добавить линию-выноску</div></div>
+<div class="card" data-name="I674 Удалить линию-выноску mcpld" onclick="pick('I674')"><img src="mcsmenu/I674.png" alt="I674"><div class="n">I674</div><div class="t">Удалить линию-выноску</div></div>
+<div class="card" data-name="I675 Перецепить линию-выноску mcplr" onclick="pick('I675')"><img src="mcsmenu/I675.png" alt="I675"><div class="n">I675</div><div class="t">Перецепить линию-выноску</div></div>
+<div class="card" data-name="I677 Управление вкладками mctabs" onclick="pick('I677')"><img src="mcsmenu/I677.png" alt="I677"><div class="n">I677</div><div class="t">Управление вкладками</div></div>
+<div class="card" data-name="I691 Сведения mcinquire" onclick="pick('I691')"><img src="mcsmenu/I691.png" alt="I691"><div class="n">I691</div><div class="t">Сведения</div></div>
+<div class="card" data-name="I819 Коннектор mcport" onclick="pick('I819')"><img src="mcsmenu/I819.png" alt="I819"><div class="n">I819</div><div class="t">Коннектор</div></div>
+<div class="card" data-name="I820 Создать коннектор mccreateport" onclick="pick('I820')"><img src="mcsmenu/I820.png" alt="I820"><div class="n">I820</div><div class="t">Создать коннектор</div></div>
+<div class="card" data-name="I821 Трасса mctrace" onclick="pick('I821')"><img src="mcsmenu/I821.png" alt="I821"><div class="n">I821</div><div class="t">Трасса</div></div>
+<div class="card" data-name="I822 Оборудование mcequipment" onclick="pick('I822')"><img src="mcsmenu/I822.png" alt="I822"><div class="n">I822</div><div class="t">Оборудование</div></div>
+<div class="card" data-name="I823 Создать оборудование mccreateequipment" onclick="pick('I823')"><img src="mcsmenu/I823.png" alt="I823"><div class="n">I823</div><div class="t">Создать оборудование</div></div>
+<div class="card" data-name="I824 Таблица соединений mcporttable" onclick="pick('I824')"><img src="mcsmenu/I824.png" alt="I824"><div class="n">I824</div><div class="t">Таблица соединений</div></div>
+<div class="card" data-name="I827 Развести трассы mctracingadd" onclick="pick('I827')"><img src="mcsmenu/I827.png" alt="I827"><div class="n">I827</div><div class="t">Развести трассы</div></div>
+<div class="card" data-name="I828 Библиотека шаблонов mcequipmentlibrary" onclick="pick('I828')"><img src="mcsmenu/I828.png" alt="I828"><div class="n">I828</div><div class="t">Библиотека шаблонов</div></div>
+<div class="card" data-name="I861 Вспомогательная окружность по трём касательным mcconst3t" onclick="pick('I861')"><img src="mcsmenu/I861.png" alt="I861"><div class="n">I861</div><div class="t">Вспомогательная окружность по трём касательным</div></div>
+<div class="card" data-name="I869 Просмотр IFC mcifcview3d" onclick="pick('I869')"><img src="mcsmenu/I869.png" alt="I869"><div class="n">I869</div><div class="t">Просмотр IFC</div></div>
+<div class="card" data-name="I870 Выбор... showtabqs" onclick="pick('I870')"><img src="mcsmenu/I870.png" alt="I870"><div class="n">I870</div><div class="t">Выбор...</div></div>
+<div class="card" data-name="I871 IFC... showtabifc" onclick="pick('I871')"><img src="mcsmenu/I871.png" alt="I871"><div class="n">I871</div><div class="t">IFC...</div></div>
+<div class="card" data-name="I874 Объекты... showtabobjects" onclick="pick('I874')"><img src="mcsmenu/I874.png" alt="I874"><div class="n">I874</div><div class="t">Объекты...</div></div>
+<div class="card" data-name="I875 База элементов... showtablibrary" onclick="pick('I875')"><img src="mcsmenu/I875.png" alt="I875"><div class="n">I875</div><div class="t">База элементов...</div></div>
+<div class="card" data-name="I876 Альбомы... showtabalbum" onclick="pick('I876')"><img src="mcsmenu/I876.png" alt="I876"><div class="n">I876</div><div class="t">Альбомы...</div></div>
+<div class="card" data-name="I877 Размерная цепь... showtabdimchain" onclick="pick('I877')"><img src="mcsmenu/I877.png" alt="I877"><div class="n">I877</div><div class="t">Размерная цепь...</div></div>
+<div class="card" data-name="I926 Нумерация объектов mcnumobj" onclick="pick('I926')"><img src="mcsmenu/I926.png" alt="I926"><div class="n">I926</div><div class="t">Нумерация объектов</div></div>
+<div class="card" data-name="I927 Угловой ординатный размер mcdimaord" onclick="pick('I927')"><img src="mcsmenu/I927.png" alt="I927"><div class="n">I927</div><div class="t">Угловой ординатный размер</div></div>
+<div class="card" data-name="I932 Наклонить размер mcdimoblique" onclick="pick('I932')"><img src="mcsmenu/I932.png" alt="I932"><div class="n">I932</div><div class="t">Наклонить размер</div></div>
+<div class="card" data-name="I938 Размер-подобие mcdimoffset" onclick="pick('I938')"><img src="mcsmenu/I938.png" alt="I938"><div class="n">I938</div><div class="t">Размер-подобие</div></div>
+<div class="card" data-name="I977 Радиус dimradius" onclick="pick('I977')"><img src="mcsmenu/I977.png" alt="I977"><div class="n">I977</div><div class="t">Радиус</div></div>
+<div class="card" data-name="I980 Линейный dimlinear" onclick="pick('I980')"><img src="mcsmenu/I980.png" alt="I980"><div class="n">I980</div><div class="t">Линейный</div></div>
+<div class="card" data-name="I981 Размер dim1" onclick="pick('I981')"><img src="mcsmenu/I981.png" alt="I981"><div class="n">I981</div><div class="t">Размер</div></div>
+<div class="card" data-name="I986 Параллельный dimaligned" onclick="pick('I986')"><img src="mcsmenu/I986.png" alt="I986"><div class="n">I986</div><div class="t">Параллельный</div></div>
+<div class="card" data-name="I987 Угловой dimangular" onclick="pick('I987')"><img src="mcsmenu/I987.png" alt="I987"><div class="n">I987</div><div class="t">Угловой</div></div>
+<div class="card" data-name="I988 Диаметр dimdiameter" onclick="pick('I988')"><img src="mcsmenu/I988.png" alt="I988"><div class="n">I988</div><div class="t">Диаметр</div></div>
+<div class="card" data-name="I989 Ординатный dimordinate" onclick="pick('I989')"><img src="mcsmenu/I989.png" alt="I989"><div class="n">I989</div><div class="t">Ординатный</div></div>
+<div class="card" data-name="I994 С изломом dimjogged" onclick="pick('I994')"><img src="mcsmenu/I994.png" alt="I994"><div class="n">I994</div><div class="t">С изломом</div></div>
+<div class="card" data-name="I1006 Горизонтальный dimhorizontal" onclick="pick('I1006')"><img src="mcsmenu/I1006.png" alt="I1006"><div class="n">I1006</div><div class="t">Горизонтальный</div></div>
+<div class="card" data-name="I1007 Вертикальный dimvertical" onclick="pick('I1007')"><img src="mcsmenu/I1007.png" alt="I1007"><div class="n">I1007</div><div class="t">Вертикальный</div></div>
+<div class="card" data-name="I1013 Спецификация... showtabspec" onclick="pick('I1013')"><img src="mcsmenu/I1013.png" alt="I1013"><div class="n">I1013</div><div class="t">Спецификация...</div></div>
+<div class="card" data-name="I1046 Произвольная подрезка контура mctrimpart" onclick="pick('I1046')"><img src="mcsmenu/I1046.png" alt="I1046"><div class="n">I1046</div><div class="t">Произвольная подрезка контура</div></div>
+<div class="card" data-name="I1052 Разорвать/восстановить размер dimbreak" onclick="pick('I1052')"><img src="mcsmenu/I1052.png" alt="I1052"><div class="n">I1052</div><div class="t">Разорвать/восстановить размер</div></div>
+<div class="card" data-name="I1053 Разорвать размер mcdimbreak" onclick="pick('I1053')"><img src="mcsmenu/I1053.png" alt="I1053"><div class="n">I1053</div><div class="t">Разорвать размер</div></div>
+<div class="card" data-name="I1055 Восстановить размер mcdimunbreak" onclick="pick('I1055')"><img src="mcsmenu/I1055.png" alt="I1055"><div class="n">I1055</div><div class="t">Восстановить размер</div></div>
+<div class="card" data-name="I1058 3d анимация 3danimation" onclick="pick('I1058')"><img src="mcsmenu/I1058.png" alt="I1058"><div class="n">I1058</div><div class="t">3d анимация</div></div>
+<div class="card" data-name="I1073 Местный разрез mcbrokenoutsection" onclick="pick('I1073')"><img src="mcsmenu/I1073.png" alt="I1073"><div class="n">I1073</div><div class="t">Местный разрез</div></div>
+<div class="card" data-name="I1089 Переопределение координатной системы объекта mcsetobjectcoordsystem" onclick="pick('I1089')"><img src="mcsmenu/I1089.png" alt="I1089"><div class="n">I1089</div><div class="t">Переопределение координатной системы объекта</div></div>
+<div class="card" data-name="I1090 Пересчет всех таблиц на чертеже mcrecalctables" onclick="pick('I1090')"><img src="mcsmenu/I1090.png" alt="I1090"><div class="n">I1090</div><div class="t">Пересчет всех таблиц на чертеже</div></div>
+<div class="card" data-name="I1096  " onclick="pick('I1096')"><img src="mcsmenu/I1096.png" alt="I1096"><div class="n">I1096</div><div class="t"></div></div>
+<div class="card" data-name="I22_DARK  " onclick="pick('I22_DARK')"><img src="mcsmenu/I22_DARK.png" alt="I22_DARK"><div class="n">I22_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I26_DARK  " onclick="pick('I26_DARK')"><img src="mcsmenu/I26_DARK.png" alt="I26_DARK"><div class="n">I26_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I27_DARK  " onclick="pick('I27_DARK')"><img src="mcsmenu/I27_DARK.png" alt="I27_DARK"><div class="n">I27_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I28_DARK  " onclick="pick('I28_DARK')"><img src="mcsmenu/I28_DARK.png" alt="I28_DARK"><div class="n">I28_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I29_DARK  " onclick="pick('I29_DARK')"><img src="mcsmenu/I29_DARK.png" alt="I29_DARK"><div class="n">I29_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I30_DARK  " onclick="pick('I30_DARK')"><img src="mcsmenu/I30_DARK.png" alt="I30_DARK"><div class="n">I30_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I32_DARK  " onclick="pick('I32_DARK')"><img src="mcsmenu/I32_DARK.png" alt="I32_DARK"><div class="n">I32_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I33_DARK  " onclick="pick('I33_DARK')"><img src="mcsmenu/I33_DARK.png" alt="I33_DARK"><div class="n">I33_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I34_DARK  " onclick="pick('I34_DARK')"><img src="mcsmenu/I34_DARK.png" alt="I34_DARK"><div class="n">I34_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I35_DARK  " onclick="pick('I35_DARK')"><img src="mcsmenu/I35_DARK.png" alt="I35_DARK"><div class="n">I35_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I45_DARK  " onclick="pick('I45_DARK')"><img src="mcsmenu/I45_DARK.png" alt="I45_DARK"><div class="n">I45_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I47_DARK  " onclick="pick('I47_DARK')"><img src="mcsmenu/I47_DARK.png" alt="I47_DARK"><div class="n">I47_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I50_DARK  " onclick="pick('I50_DARK')"><img src="mcsmenu/I50_DARK.png" alt="I50_DARK"><div class="n">I50_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I53_DARK  " onclick="pick('I53_DARK')"><img src="mcsmenu/I53_DARK.png" alt="I53_DARK"><div class="n">I53_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I58_DARK  " onclick="pick('I58_DARK')"><img src="mcsmenu/I58_DARK.png" alt="I58_DARK"><div class="n">I58_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I59_DARK  " onclick="pick('I59_DARK')"><img src="mcsmenu/I59_DARK.png" alt="I59_DARK"><div class="n">I59_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I60_DARK  " onclick="pick('I60_DARK')"><img src="mcsmenu/I60_DARK.png" alt="I60_DARK"><div class="n">I60_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I61_DARK  " onclick="pick('I61_DARK')"><img src="mcsmenu/I61_DARK.png" alt="I61_DARK"><div class="n">I61_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I62_DARK  " onclick="pick('I62_DARK')"><img src="mcsmenu/I62_DARK.png" alt="I62_DARK"><div class="n">I62_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I63_DARK  " onclick="pick('I63_DARK')"><img src="mcsmenu/I63_DARK.png" alt="I63_DARK"><div class="n">I63_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I67_DARK  " onclick="pick('I67_DARK')"><img src="mcsmenu/I67_DARK.png" alt="I67_DARK"><div class="n">I67_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I71_DARK  " onclick="pick('I71_DARK')"><img src="mcsmenu/I71_DARK.png" alt="I71_DARK"><div class="n">I71_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I72_DARK  " onclick="pick('I72_DARK')"><img src="mcsmenu/I72_DARK.png" alt="I72_DARK"><div class="n">I72_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I73_DARK  " onclick="pick('I73_DARK')"><img src="mcsmenu/I73_DARK.png" alt="I73_DARK"><div class="n">I73_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I76_DARK  " onclick="pick('I76_DARK')"><img src="mcsmenu/I76_DARK.png" alt="I76_DARK"><div class="n">I76_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I77_DARK  " onclick="pick('I77_DARK')"><img src="mcsmenu/I77_DARK.png" alt="I77_DARK"><div class="n">I77_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I78_DARK  " onclick="pick('I78_DARK')"><img src="mcsmenu/I78_DARK.png" alt="I78_DARK"><div class="n">I78_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I87_DARK  " onclick="pick('I87_DARK')"><img src="mcsmenu/I87_DARK.png" alt="I87_DARK"><div class="n">I87_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I91_DARK  " onclick="pick('I91_DARK')"><img src="mcsmenu/I91_DARK.png" alt="I91_DARK"><div class="n">I91_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I92_DARK  " onclick="pick('I92_DARK')"><img src="mcsmenu/I92_DARK.png" alt="I92_DARK"><div class="n">I92_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I93_DARK  " onclick="pick('I93_DARK')"><img src="mcsmenu/I93_DARK.png" alt="I93_DARK"><div class="n">I93_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I94_DARK  " onclick="pick('I94_DARK')"><img src="mcsmenu/I94_DARK.png" alt="I94_DARK"><div class="n">I94_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I95_DARK  " onclick="pick('I95_DARK')"><img src="mcsmenu/I95_DARK.png" alt="I95_DARK"><div class="n">I95_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I97_DARK  " onclick="pick('I97_DARK')"><img src="mcsmenu/I97_DARK.png" alt="I97_DARK"><div class="n">I97_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I98_DARK  " onclick="pick('I98_DARK')"><img src="mcsmenu/I98_DARK.png" alt="I98_DARK"><div class="n">I98_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I99_DARK  " onclick="pick('I99_DARK')"><img src="mcsmenu/I99_DARK.png" alt="I99_DARK"><div class="n">I99_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I100_DARK  " onclick="pick('I100_DARK')"><img src="mcsmenu/I100_DARK.png" alt="I100_DARK"><div class="n">I100_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I101_DARK  " onclick="pick('I101_DARK')"><img src="mcsmenu/I101_DARK.png" alt="I101_DARK"><div class="n">I101_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I102_DARK  " onclick="pick('I102_DARK')"><img src="mcsmenu/I102_DARK.png" alt="I102_DARK"><div class="n">I102_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I103_DARK  " onclick="pick('I103_DARK')"><img src="mcsmenu/I103_DARK.png" alt="I103_DARK"><div class="n">I103_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I106_DARK  " onclick="pick('I106_DARK')"><img src="mcsmenu/I106_DARK.png" alt="I106_DARK"><div class="n">I106_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I108_DARK  " onclick="pick('I108_DARK')"><img src="mcsmenu/I108_DARK.png" alt="I108_DARK"><div class="n">I108_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I109_DARK  " onclick="pick('I109_DARK')"><img src="mcsmenu/I109_DARK.png" alt="I109_DARK"><div class="n">I109_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I110_DARK  " onclick="pick('I110_DARK')"><img src="mcsmenu/I110_DARK.png" alt="I110_DARK"><div class="n">I110_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I111_DARK  " onclick="pick('I111_DARK')"><img src="mcsmenu/I111_DARK.png" alt="I111_DARK"><div class="n">I111_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I112_DARK  " onclick="pick('I112_DARK')"><img src="mcsmenu/I112_DARK.png" alt="I112_DARK"><div class="n">I112_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I113_DARK  " onclick="pick('I113_DARK')"><img src="mcsmenu/I113_DARK.png" alt="I113_DARK"><div class="n">I113_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I114_DARK  " onclick="pick('I114_DARK')"><img src="mcsmenu/I114_DARK.png" alt="I114_DARK"><div class="n">I114_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I115_DARK  " onclick="pick('I115_DARK')"><img src="mcsmenu/I115_DARK.png" alt="I115_DARK"><div class="n">I115_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I116_DARK  " onclick="pick('I116_DARK')"><img src="mcsmenu/I116_DARK.png" alt="I116_DARK"><div class="n">I116_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I117_DARK  " onclick="pick('I117_DARK')"><img src="mcsmenu/I117_DARK.png" alt="I117_DARK"><div class="n">I117_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I118_DARK  " onclick="pick('I118_DARK')"><img src="mcsmenu/I118_DARK.png" alt="I118_DARK"><div class="n">I118_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I121_DARK  " onclick="pick('I121_DARK')"><img src="mcsmenu/I121_DARK.png" alt="I121_DARK"><div class="n">I121_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I123_DARK  " onclick="pick('I123_DARK')"><img src="mcsmenu/I123_DARK.png" alt="I123_DARK"><div class="n">I123_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I124_DARK  " onclick="pick('I124_DARK')"><img src="mcsmenu/I124_DARK.png" alt="I124_DARK"><div class="n">I124_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I127_DARK  " onclick="pick('I127_DARK')"><img src="mcsmenu/I127_DARK.png" alt="I127_DARK"><div class="n">I127_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I135_DARK  " onclick="pick('I135_DARK')"><img src="mcsmenu/I135_DARK.png" alt="I135_DARK"><div class="n">I135_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I137_DARK  " onclick="pick('I137_DARK')"><img src="mcsmenu/I137_DARK.png" alt="I137_DARK"><div class="n">I137_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I139_DARK  " onclick="pick('I139_DARK')"><img src="mcsmenu/I139_DARK.png" alt="I139_DARK"><div class="n">I139_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I142_DARK  " onclick="pick('I142_DARK')"><img src="mcsmenu/I142_DARK.png" alt="I142_DARK"><div class="n">I142_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I143_DARK  " onclick="pick('I143_DARK')"><img src="mcsmenu/I143_DARK.png" alt="I143_DARK"><div class="n">I143_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I144_DARK  " onclick="pick('I144_DARK')"><img src="mcsmenu/I144_DARK.png" alt="I144_DARK"><div class="n">I144_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I145_DARK  " onclick="pick('I145_DARK')"><img src="mcsmenu/I145_DARK.png" alt="I145_DARK"><div class="n">I145_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I148_DARK  " onclick="pick('I148_DARK')"><img src="mcsmenu/I148_DARK.png" alt="I148_DARK"><div class="n">I148_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I150_DARK  " onclick="pick('I150_DARK')"><img src="mcsmenu/I150_DARK.png" alt="I150_DARK"><div class="n">I150_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I152_DARK  " onclick="pick('I152_DARK')"><img src="mcsmenu/I152_DARK.png" alt="I152_DARK"><div class="n">I152_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I153_DARK  " onclick="pick('I153_DARK')"><img src="mcsmenu/I153_DARK.png" alt="I153_DARK"><div class="n">I153_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I154_DARK  " onclick="pick('I154_DARK')"><img src="mcsmenu/I154_DARK.png" alt="I154_DARK"><div class="n">I154_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I155_DARK  " onclick="pick('I155_DARK')"><img src="mcsmenu/I155_DARK.png" alt="I155_DARK"><div class="n">I155_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I156_DARK  " onclick="pick('I156_DARK')"><img src="mcsmenu/I156_DARK.png" alt="I156_DARK"><div class="n">I156_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I157_DARK  " onclick="pick('I157_DARK')"><img src="mcsmenu/I157_DARK.png" alt="I157_DARK"><div class="n">I157_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I158_DARK  " onclick="pick('I158_DARK')"><img src="mcsmenu/I158_DARK.png" alt="I158_DARK"><div class="n">I158_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I159_DARK  " onclick="pick('I159_DARK')"><img src="mcsmenu/I159_DARK.png" alt="I159_DARK"><div class="n">I159_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I163_DARK  " onclick="pick('I163_DARK')"><img src="mcsmenu/I163_DARK.png" alt="I163_DARK"><div class="n">I163_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I164_DARK  " onclick="pick('I164_DARK')"><img src="mcsmenu/I164_DARK.png" alt="I164_DARK"><div class="n">I164_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I167_DARK  " onclick="pick('I167_DARK')"><img src="mcsmenu/I167_DARK.png" alt="I167_DARK"><div class="n">I167_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I169_DARK  " onclick="pick('I169_DARK')"><img src="mcsmenu/I169_DARK.png" alt="I169_DARK"><div class="n">I169_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I171_DARK  " onclick="pick('I171_DARK')"><img src="mcsmenu/I171_DARK.png" alt="I171_DARK"><div class="n">I171_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I172_DARK  " onclick="pick('I172_DARK')"><img src="mcsmenu/I172_DARK.png" alt="I172_DARK"><div class="n">I172_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I181_DARK  " onclick="pick('I181_DARK')"><img src="mcsmenu/I181_DARK.png" alt="I181_DARK"><div class="n">I181_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I182_DARK  " onclick="pick('I182_DARK')"><img src="mcsmenu/I182_DARK.png" alt="I182_DARK"><div class="n">I182_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I185_DARK  " onclick="pick('I185_DARK')"><img src="mcsmenu/I185_DARK.png" alt="I185_DARK"><div class="n">I185_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I186_DARK  " onclick="pick('I186_DARK')"><img src="mcsmenu/I186_DARK.png" alt="I186_DARK"><div class="n">I186_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I189_DARK  " onclick="pick('I189_DARK')"><img src="mcsmenu/I189_DARK.png" alt="I189_DARK"><div class="n">I189_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I198_DARK  " onclick="pick('I198_DARK')"><img src="mcsmenu/I198_DARK.png" alt="I198_DARK"><div class="n">I198_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I199_DARK  " onclick="pick('I199_DARK')"><img src="mcsmenu/I199_DARK.png" alt="I199_DARK"><div class="n">I199_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I201_DARK  " onclick="pick('I201_DARK')"><img src="mcsmenu/I201_DARK.png" alt="I201_DARK"><div class="n">I201_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I203_DARK  " onclick="pick('I203_DARK')"><img src="mcsmenu/I203_DARK.png" alt="I203_DARK"><div class="n">I203_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I205_DARK  " onclick="pick('I205_DARK')"><img src="mcsmenu/I205_DARK.png" alt="I205_DARK"><div class="n">I205_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I207_DARK  " onclick="pick('I207_DARK')"><img src="mcsmenu/I207_DARK.png" alt="I207_DARK"><div class="n">I207_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I212_DARK  " onclick="pick('I212_DARK')"><img src="mcsmenu/I212_DARK.png" alt="I212_DARK"><div class="n">I212_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I216_DARK  " onclick="pick('I216_DARK')"><img src="mcsmenu/I216_DARK.png" alt="I216_DARK"><div class="n">I216_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I217_DARK  " onclick="pick('I217_DARK')"><img src="mcsmenu/I217_DARK.png" alt="I217_DARK"><div class="n">I217_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I223_DARK  " onclick="pick('I223_DARK')"><img src="mcsmenu/I223_DARK.png" alt="I223_DARK"><div class="n">I223_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I227_DARK  " onclick="pick('I227_DARK')"><img src="mcsmenu/I227_DARK.png" alt="I227_DARK"><div class="n">I227_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I233_DARK  " onclick="pick('I233_DARK')"><img src="mcsmenu/I233_DARK.png" alt="I233_DARK"><div class="n">I233_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I234_DARK  " onclick="pick('I234_DARK')"><img src="mcsmenu/I234_DARK.png" alt="I234_DARK"><div class="n">I234_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I237_DARK  " onclick="pick('I237_DARK')"><img src="mcsmenu/I237_DARK.png" alt="I237_DARK"><div class="n">I237_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I252_DARK  " onclick="pick('I252_DARK')"><img src="mcsmenu/I252_DARK.png" alt="I252_DARK"><div class="n">I252_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I260_DARK  " onclick="pick('I260_DARK')"><img src="mcsmenu/I260_DARK.png" alt="I260_DARK"><div class="n">I260_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I261_DARK  " onclick="pick('I261_DARK')"><img src="mcsmenu/I261_DARK.png" alt="I261_DARK"><div class="n">I261_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I262_DARK  " onclick="pick('I262_DARK')"><img src="mcsmenu/I262_DARK.png" alt="I262_DARK"><div class="n">I262_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I264_DARK  " onclick="pick('I264_DARK')"><img src="mcsmenu/I264_DARK.png" alt="I264_DARK"><div class="n">I264_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I268_DARK  " onclick="pick('I268_DARK')"><img src="mcsmenu/I268_DARK.png" alt="I268_DARK"><div class="n">I268_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I269_DARK  " onclick="pick('I269_DARK')"><img src="mcsmenu/I269_DARK.png" alt="I269_DARK"><div class="n">I269_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I270_DARK  " onclick="pick('I270_DARK')"><img src="mcsmenu/I270_DARK.png" alt="I270_DARK"><div class="n">I270_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I271_DARK  " onclick="pick('I271_DARK')"><img src="mcsmenu/I271_DARK.png" alt="I271_DARK"><div class="n">I271_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I272_DARK  " onclick="pick('I272_DARK')"><img src="mcsmenu/I272_DARK.png" alt="I272_DARK"><div class="n">I272_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I273_DARK  " onclick="pick('I273_DARK')"><img src="mcsmenu/I273_DARK.png" alt="I273_DARK"><div class="n">I273_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I274_DARK  " onclick="pick('I274_DARK')"><img src="mcsmenu/I274_DARK.png" alt="I274_DARK"><div class="n">I274_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I280_DARK  " onclick="pick('I280_DARK')"><img src="mcsmenu/I280_DARK.png" alt="I280_DARK"><div class="n">I280_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I281_DARK  " onclick="pick('I281_DARK')"><img src="mcsmenu/I281_DARK.png" alt="I281_DARK"><div class="n">I281_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I282_DARK  " onclick="pick('I282_DARK')"><img src="mcsmenu/I282_DARK.png" alt="I282_DARK"><div class="n">I282_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I284_DARK  " onclick="pick('I284_DARK')"><img src="mcsmenu/I284_DARK.png" alt="I284_DARK"><div class="n">I284_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I285_DARK  " onclick="pick('I285_DARK')"><img src="mcsmenu/I285_DARK.png" alt="I285_DARK"><div class="n">I285_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I286_DARK  " onclick="pick('I286_DARK')"><img src="mcsmenu/I286_DARK.png" alt="I286_DARK"><div class="n">I286_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I288_DARK  " onclick="pick('I288_DARK')"><img src="mcsmenu/I288_DARK.png" alt="I288_DARK"><div class="n">I288_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I292_DARK  " onclick="pick('I292_DARK')"><img src="mcsmenu/I292_DARK.png" alt="I292_DARK"><div class="n">I292_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I293_DARK  " onclick="pick('I293_DARK')"><img src="mcsmenu/I293_DARK.png" alt="I293_DARK"><div class="n">I293_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I296_DARK  " onclick="pick('I296_DARK')"><img src="mcsmenu/I296_DARK.png" alt="I296_DARK"><div class="n">I296_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I297_DARK  " onclick="pick('I297_DARK')"><img src="mcsmenu/I297_DARK.png" alt="I297_DARK"><div class="n">I297_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I298_DARK  " onclick="pick('I298_DARK')"><img src="mcsmenu/I298_DARK.png" alt="I298_DARK"><div class="n">I298_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I300_DARK  " onclick="pick('I300_DARK')"><img src="mcsmenu/I300_DARK.png" alt="I300_DARK"><div class="n">I300_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I302_DARK  " onclick="pick('I302_DARK')"><img src="mcsmenu/I302_DARK.png" alt="I302_DARK"><div class="n">I302_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I307_DARK  " onclick="pick('I307_DARK')"><img src="mcsmenu/I307_DARK.png" alt="I307_DARK"><div class="n">I307_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I309_DARK  " onclick="pick('I309_DARK')"><img src="mcsmenu/I309_DARK.png" alt="I309_DARK"><div class="n">I309_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I312_DARK  " onclick="pick('I312_DARK')"><img src="mcsmenu/I312_DARK.png" alt="I312_DARK"><div class="n">I312_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I317_DARK  " onclick="pick('I317_DARK')"><img src="mcsmenu/I317_DARK.png" alt="I317_DARK"><div class="n">I317_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I318_DARK  " onclick="pick('I318_DARK')"><img src="mcsmenu/I318_DARK.png" alt="I318_DARK"><div class="n">I318_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I319_DARK  " onclick="pick('I319_DARK')"><img src="mcsmenu/I319_DARK.png" alt="I319_DARK"><div class="n">I319_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I323_DARK  " onclick="pick('I323_DARK')"><img src="mcsmenu/I323_DARK.png" alt="I323_DARK"><div class="n">I323_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I334_DARK  " onclick="pick('I334_DARK')"><img src="mcsmenu/I334_DARK.png" alt="I334_DARK"><div class="n">I334_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I337_DARK  " onclick="pick('I337_DARK')"><img src="mcsmenu/I337_DARK.png" alt="I337_DARK"><div class="n">I337_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I340_DARK  " onclick="pick('I340_DARK')"><img src="mcsmenu/I340_DARK.png" alt="I340_DARK"><div class="n">I340_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I341_DARK  " onclick="pick('I341_DARK')"><img src="mcsmenu/I341_DARK.png" alt="I341_DARK"><div class="n">I341_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I346_DARK  " onclick="pick('I346_DARK')"><img src="mcsmenu/I346_DARK.png" alt="I346_DARK"><div class="n">I346_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I348_DARK  " onclick="pick('I348_DARK')"><img src="mcsmenu/I348_DARK.png" alt="I348_DARK"><div class="n">I348_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I349_DARK  " onclick="pick('I349_DARK')"><img src="mcsmenu/I349_DARK.png" alt="I349_DARK"><div class="n">I349_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I351_DARK  " onclick="pick('I351_DARK')"><img src="mcsmenu/I351_DARK.png" alt="I351_DARK"><div class="n">I351_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I353_DARK  " onclick="pick('I353_DARK')"><img src="mcsmenu/I353_DARK.png" alt="I353_DARK"><div class="n">I353_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I355_DARK  " onclick="pick('I355_DARK')"><img src="mcsmenu/I355_DARK.png" alt="I355_DARK"><div class="n">I355_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I356_DARK  " onclick="pick('I356_DARK')"><img src="mcsmenu/I356_DARK.png" alt="I356_DARK"><div class="n">I356_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I357_DARK  " onclick="pick('I357_DARK')"><img src="mcsmenu/I357_DARK.png" alt="I357_DARK"><div class="n">I357_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I360_DARK  " onclick="pick('I360_DARK')"><img src="mcsmenu/I360_DARK.png" alt="I360_DARK"><div class="n">I360_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I361_DARK  " onclick="pick('I361_DARK')"><img src="mcsmenu/I361_DARK.png" alt="I361_DARK"><div class="n">I361_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I363_DARK  " onclick="pick('I363_DARK')"><img src="mcsmenu/I363_DARK.png" alt="I363_DARK"><div class="n">I363_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I365_DARK  " onclick="pick('I365_DARK')"><img src="mcsmenu/I365_DARK.png" alt="I365_DARK"><div class="n">I365_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I366_DARK  " onclick="pick('I366_DARK')"><img src="mcsmenu/I366_DARK.png" alt="I366_DARK"><div class="n">I366_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I367_DARK  " onclick="pick('I367_DARK')"><img src="mcsmenu/I367_DARK.png" alt="I367_DARK"><div class="n">I367_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I368_DARK  " onclick="pick('I368_DARK')"><img src="mcsmenu/I368_DARK.png" alt="I368_DARK"><div class="n">I368_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I369_DARK  " onclick="pick('I369_DARK')"><img src="mcsmenu/I369_DARK.png" alt="I369_DARK"><div class="n">I369_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I370_DARK  " onclick="pick('I370_DARK')"><img src="mcsmenu/I370_DARK.png" alt="I370_DARK"><div class="n">I370_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I385_DARK  " onclick="pick('I385_DARK')"><img src="mcsmenu/I385_DARK.png" alt="I385_DARK"><div class="n">I385_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I386_DARK  " onclick="pick('I386_DARK')"><img src="mcsmenu/I386_DARK.png" alt="I386_DARK"><div class="n">I386_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I387_DARK  " onclick="pick('I387_DARK')"><img src="mcsmenu/I387_DARK.png" alt="I387_DARK"><div class="n">I387_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I388_DARK  " onclick="pick('I388_DARK')"><img src="mcsmenu/I388_DARK.png" alt="I388_DARK"><div class="n">I388_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I389_DARK  " onclick="pick('I389_DARK')"><img src="mcsmenu/I389_DARK.png" alt="I389_DARK"><div class="n">I389_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I390_DARK  " onclick="pick('I390_DARK')"><img src="mcsmenu/I390_DARK.png" alt="I390_DARK"><div class="n">I390_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I391_DARK  " onclick="pick('I391_DARK')"><img src="mcsmenu/I391_DARK.png" alt="I391_DARK"><div class="n">I391_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I392_DARK  " onclick="pick('I392_DARK')"><img src="mcsmenu/I392_DARK.png" alt="I392_DARK"><div class="n">I392_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I393_DARK  " onclick="pick('I393_DARK')"><img src="mcsmenu/I393_DARK.png" alt="I393_DARK"><div class="n">I393_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I394_DARK  " onclick="pick('I394_DARK')"><img src="mcsmenu/I394_DARK.png" alt="I394_DARK"><div class="n">I394_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I397_DARK  " onclick="pick('I397_DARK')"><img src="mcsmenu/I397_DARK.png" alt="I397_DARK"><div class="n">I397_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I398_DARK  " onclick="pick('I398_DARK')"><img src="mcsmenu/I398_DARK.png" alt="I398_DARK"><div class="n">I398_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I399_DARK  " onclick="pick('I399_DARK')"><img src="mcsmenu/I399_DARK.png" alt="I399_DARK"><div class="n">I399_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I400_DARK  " onclick="pick('I400_DARK')"><img src="mcsmenu/I400_DARK.png" alt="I400_DARK"><div class="n">I400_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I401_DARK  " onclick="pick('I401_DARK')"><img src="mcsmenu/I401_DARK.png" alt="I401_DARK"><div class="n">I401_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I402_DARK  " onclick="pick('I402_DARK')"><img src="mcsmenu/I402_DARK.png" alt="I402_DARK"><div class="n">I402_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I404_DARK  " onclick="pick('I404_DARK')"><img src="mcsmenu/I404_DARK.png" alt="I404_DARK"><div class="n">I404_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I405_DARK  " onclick="pick('I405_DARK')"><img src="mcsmenu/I405_DARK.png" alt="I405_DARK"><div class="n">I405_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I406_DARK  " onclick="pick('I406_DARK')"><img src="mcsmenu/I406_DARK.png" alt="I406_DARK"><div class="n">I406_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I408_DARK  " onclick="pick('I408_DARK')"><img src="mcsmenu/I408_DARK.png" alt="I408_DARK"><div class="n">I408_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I411_DARK  " onclick="pick('I411_DARK')"><img src="mcsmenu/I411_DARK.png" alt="I411_DARK"><div class="n">I411_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I412_DARK  " onclick="pick('I412_DARK')"><img src="mcsmenu/I412_DARK.png" alt="I412_DARK"><div class="n">I412_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I416_DARK  " onclick="pick('I416_DARK')"><img src="mcsmenu/I416_DARK.png" alt="I416_DARK"><div class="n">I416_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I418_DARK  " onclick="pick('I418_DARK')"><img src="mcsmenu/I418_DARK.png" alt="I418_DARK"><div class="n">I418_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I433_DARK  " onclick="pick('I433_DARK')"><img src="mcsmenu/I433_DARK.png" alt="I433_DARK"><div class="n">I433_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I436_DARK  " onclick="pick('I436_DARK')"><img src="mcsmenu/I436_DARK.png" alt="I436_DARK"><div class="n">I436_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I438_DARK  " onclick="pick('I438_DARK')"><img src="mcsmenu/I438_DARK.png" alt="I438_DARK"><div class="n">I438_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I439_DARK  " onclick="pick('I439_DARK')"><img src="mcsmenu/I439_DARK.png" alt="I439_DARK"><div class="n">I439_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I440_DARK  " onclick="pick('I440_DARK')"><img src="mcsmenu/I440_DARK.png" alt="I440_DARK"><div class="n">I440_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I441_DARK  " onclick="pick('I441_DARK')"><img src="mcsmenu/I441_DARK.png" alt="I441_DARK"><div class="n">I441_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I442_DARK  " onclick="pick('I442_DARK')"><img src="mcsmenu/I442_DARK.png" alt="I442_DARK"><div class="n">I442_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I444_DARK  " onclick="pick('I444_DARK')"><img src="mcsmenu/I444_DARK.png" alt="I444_DARK"><div class="n">I444_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I445_DARK  " onclick="pick('I445_DARK')"><img src="mcsmenu/I445_DARK.png" alt="I445_DARK"><div class="n">I445_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I446_DARK  " onclick="pick('I446_DARK')"><img src="mcsmenu/I446_DARK.png" alt="I446_DARK"><div class="n">I446_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I460_DARK  " onclick="pick('I460_DARK')"><img src="mcsmenu/I460_DARK.png" alt="I460_DARK"><div class="n">I460_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I477_DARK  " onclick="pick('I477_DARK')"><img src="mcsmenu/I477_DARK.png" alt="I477_DARK"><div class="n">I477_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I478_DARK  " onclick="pick('I478_DARK')"><img src="mcsmenu/I478_DARK.png" alt="I478_DARK"><div class="n">I478_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I532_DARK  " onclick="pick('I532_DARK')"><img src="mcsmenu/I532_DARK.png" alt="I532_DARK"><div class="n">I532_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I594_DARK  " onclick="pick('I594_DARK')"><img src="mcsmenu/I594_DARK.png" alt="I594_DARK"><div class="n">I594_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I599_DARK  " onclick="pick('I599_DARK')"><img src="mcsmenu/I599_DARK.png" alt="I599_DARK"><div class="n">I599_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I601_DARK  " onclick="pick('I601_DARK')"><img src="mcsmenu/I601_DARK.png" alt="I601_DARK"><div class="n">I601_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I604_DARK  " onclick="pick('I604_DARK')"><img src="mcsmenu/I604_DARK.png" alt="I604_DARK"><div class="n">I604_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I669_DARK  " onclick="pick('I669_DARK')"><img src="mcsmenu/I669_DARK.png" alt="I669_DARK"><div class="n">I669_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I673_DARK  " onclick="pick('I673_DARK')"><img src="mcsmenu/I673_DARK.png" alt="I673_DARK"><div class="n">I673_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I674_DARK  " onclick="pick('I674_DARK')"><img src="mcsmenu/I674_DARK.png" alt="I674_DARK"><div class="n">I674_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I675_DARK  " onclick="pick('I675_DARK')"><img src="mcsmenu/I675_DARK.png" alt="I675_DARK"><div class="n">I675_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I677_DARK  " onclick="pick('I677_DARK')"><img src="mcsmenu/I677_DARK.png" alt="I677_DARK"><div class="n">I677_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I691_DARK  " onclick="pick('I691_DARK')"><img src="mcsmenu/I691_DARK.png" alt="I691_DARK"><div class="n">I691_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I819_DARK  " onclick="pick('I819_DARK')"><img src="mcsmenu/I819_DARK.png" alt="I819_DARK"><div class="n">I819_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I820_DARK  " onclick="pick('I820_DARK')"><img src="mcsmenu/I820_DARK.png" alt="I820_DARK"><div class="n">I820_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I821_DARK  " onclick="pick('I821_DARK')"><img src="mcsmenu/I821_DARK.png" alt="I821_DARK"><div class="n">I821_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I822_DARK  " onclick="pick('I822_DARK')"><img src="mcsmenu/I822_DARK.png" alt="I822_DARK"><div class="n">I822_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I823_DARK  " onclick="pick('I823_DARK')"><img src="mcsmenu/I823_DARK.png" alt="I823_DARK"><div class="n">I823_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I824_DARK  " onclick="pick('I824_DARK')"><img src="mcsmenu/I824_DARK.png" alt="I824_DARK"><div class="n">I824_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I827_DARK  " onclick="pick('I827_DARK')"><img src="mcsmenu/I827_DARK.png" alt="I827_DARK"><div class="n">I827_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I828_DARK  " onclick="pick('I828_DARK')"><img src="mcsmenu/I828_DARK.png" alt="I828_DARK"><div class="n">I828_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I869_DARK  " onclick="pick('I869_DARK')"><img src="mcsmenu/I869_DARK.png" alt="I869_DARK"><div class="n">I869_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I870_DARK  " onclick="pick('I870_DARK')"><img src="mcsmenu/I870_DARK.png" alt="I870_DARK"><div class="n">I870_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I871_DARK  " onclick="pick('I871_DARK')"><img src="mcsmenu/I871_DARK.png" alt="I871_DARK"><div class="n">I871_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I926_DARK  " onclick="pick('I926_DARK')"><img src="mcsmenu/I926_DARK.png" alt="I926_DARK"><div class="n">I926_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I927_DARK  " onclick="pick('I927_DARK')"><img src="mcsmenu/I927_DARK.png" alt="I927_DARK"><div class="n">I927_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I932_DARK  " onclick="pick('I932_DARK')"><img src="mcsmenu/I932_DARK.png" alt="I932_DARK"><div class="n">I932_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I938_DARK  " onclick="pick('I938_DARK')"><img src="mcsmenu/I938_DARK.png" alt="I938_DARK"><div class="n">I938_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I977_DARK  " onclick="pick('I977_DARK')"><img src="mcsmenu/I977_DARK.png" alt="I977_DARK"><div class="n">I977_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I980_DARK  " onclick="pick('I980_DARK')"><img src="mcsmenu/I980_DARK.png" alt="I980_DARK"><div class="n">I980_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I981_DARK  " onclick="pick('I981_DARK')"><img src="mcsmenu/I981_DARK.png" alt="I981_DARK"><div class="n">I981_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I986_DARK  " onclick="pick('I986_DARK')"><img src="mcsmenu/I986_DARK.png" alt="I986_DARK"><div class="n">I986_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I987_DARK  " onclick="pick('I987_DARK')"><img src="mcsmenu/I987_DARK.png" alt="I987_DARK"><div class="n">I987_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I988_DARK  " onclick="pick('I988_DARK')"><img src="mcsmenu/I988_DARK.png" alt="I988_DARK"><div class="n">I988_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I989_DARK  " onclick="pick('I989_DARK')"><img src="mcsmenu/I989_DARK.png" alt="I989_DARK"><div class="n">I989_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I994_DARK  " onclick="pick('I994_DARK')"><img src="mcsmenu/I994_DARK.png" alt="I994_DARK"><div class="n">I994_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I1006_DARK  " onclick="pick('I1006_DARK')"><img src="mcsmenu/I1006_DARK.png" alt="I1006_DARK"><div class="n">I1006_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I1007_DARK  " onclick="pick('I1007_DARK')"><img src="mcsmenu/I1007_DARK.png" alt="I1007_DARK"><div class="n">I1007_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I1013_DARK  " onclick="pick('I1013_DARK')"><img src="mcsmenu/I1013_DARK.png" alt="I1013_DARK"><div class="n">I1013_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I1046_DARK  " onclick="pick('I1046_DARK')"><img src="mcsmenu/I1046_DARK.png" alt="I1046_DARK"><div class="n">I1046_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I1052_DARK  " onclick="pick('I1052_DARK')"><img src="mcsmenu/I1052_DARK.png" alt="I1052_DARK"><div class="n">I1052_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I1053_DARK  " onclick="pick('I1053_DARK')"><img src="mcsmenu/I1053_DARK.png" alt="I1053_DARK"><div class="n">I1053_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I1055_DARK  " onclick="pick('I1055_DARK')"><img src="mcsmenu/I1055_DARK.png" alt="I1055_DARK"><div class="n">I1055_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I1058_DARK  " onclick="pick('I1058_DARK')"><img src="mcsmenu/I1058_DARK.png" alt="I1058_DARK"><div class="n">I1058_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I1073_DARK  " onclick="pick('I1073_DARK')"><img src="mcsmenu/I1073_DARK.png" alt="I1073_DARK"><div class="n">I1073_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I1089_DARK  " onclick="pick('I1089_DARK')"><img src="mcsmenu/I1089_DARK.png" alt="I1089_DARK"><div class="n">I1089_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I1090_DARK  " onclick="pick('I1090_DARK')"><img src="mcsmenu/I1090_DARK.png" alt="I1090_DARK"><div class="n">I1090_DARK</div><div class="t"></div></div>
+<div class="card" data-name="I1096_DARK  " onclick="pick('I1096_DARK')"><img src="mcsmenu/I1096_DARK.png" alt="I1096_DARK"><div class="n">I1096_DARK</div><div class="t"></div></div>
+</div>
+<script>
+function pick(n) {
+  document.getElementById('picked').textContent =
+    'Выбрано: ' + n + '   →   BitmapDll=smcsmenu.dll |Icon=s' + n;
+}
+function filter() {
+  var q = document.getElementById('q').value.toLowerCase();
+  document.querySelectorAll('.card').forEach(function(c) {
+    c.style.display = c.dataset.name.toLowerCase().indexOf(q) >= 0 ? '' : 'none';
+  });
+}
+</script>
+</body></html>
